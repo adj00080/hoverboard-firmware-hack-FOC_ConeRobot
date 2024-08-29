@@ -370,8 +370,8 @@ int main(void) {
       distanceErr = distance - (int)(setDistance * 1345);
 
       if (nunchuk_connected == 0) {
-        cmdL = cmdL * 0.5f + (CLAMP(distanceErr + (steering*((float)MAX(ABS(distanceErr), 50)) * ROT_P), -850, 850) * -0.2f);
-        cmdR = cmdR * 0.5f + (CLAMP(distanceErr - (steering*((float)MAX(ABS(distanceErr), 50)) * ROT_P), -850, 850) * -0.2f);
+        cmdL = cmdL * 0.8f + (CLAMP(distanceErr + (steering*((float)MAX(ABS(distanceErr), 50)) * ROT_P), -500, 500) * -0.2f);
+        cmdR = cmdR * 0.8f + (CLAMP(distanceErr - (steering*((float)MAX(ABS(distanceErr), 50)) * ROT_P), -500, 500) * -0.2f);
         if (distanceErr > 0) {
           enable = 1;
         }
