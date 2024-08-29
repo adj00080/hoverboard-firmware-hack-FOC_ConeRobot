@@ -365,7 +365,7 @@ int main(void) {
     #endif
 
     #ifdef VARIANT_TRANSPOTTER
-      distance    = CLAMP(input1[inIdx].cmd - 180, 0, 2048);
+      distance    = CLAMP(input1[inIdx].cmd - 180, 0, 4096);
       steering    = (input2[inIdx].cmd - 2048) / 2048.0;
       distanceErr = distance - (int)(setDistance * 1345);
 

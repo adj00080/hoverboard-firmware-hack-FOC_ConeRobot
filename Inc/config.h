@@ -154,7 +154,7 @@
 // Limitation settings
 #define I_MOT_MAX       15              // [A] Maximum single motor current limit
 #define I_DC_MAX        17              // [A] Maximum stage2 DC Link current limit for Commutation and Sinusoidal types (This is the final current protection. Above this value, current chopping is applied. To avoid this make sure that I_DC_MAX = I_MOT_MAX + 2A)
-#define N_MOT_MAX       500            // [rpm] Maximum motor speed limit
+#define N_MOT_MAX       50            // [rpm] Maximum motor speed limit
 
 // Field Weakening / Phase Advance
 #define FIELD_WEAK_ENA  0               // [-] Field Weakening / Phase Advance enable flag: 0 = Disabled (default), 1 = Enabled
@@ -592,7 +592,7 @@
   // #define SUPPORT_NUNCHUK
   #define GAMETRAK_CONNECTION_NORMAL    // for normal wiring according to the wiki instructions
   // #define GAMETRAK_CONNECTION_ALTERNATE // use this define instead if you messed up the gametrak ADC wiring (steering is speed, and length of the wire is steering)
-  #define ROT_P               -1.2       // P coefficient for the direction controller. Positive / Negative values to invert gametrak steering direction.
+  #define ROT_P               1.2      // 1.2  P coefficient for the direction controller. Positive / Negative values to invert gametrak steering direction.
   #define FILTER         0.1  // lower value == softer filter. do not use values <0.01, you will get float precision issues.
   // during nunchuk control (only relevant when activated)
   #define SPEED_COEFFICIENT   16384     // 0.9f - higher value == stronger. 0.0 to ~2.0?
