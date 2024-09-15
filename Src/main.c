@@ -372,10 +372,10 @@ int main(void) {
       if (nunchuk_connected == 0) {
         cmdL = cmdL * 0.8f + (CLAMP(distanceErr + (steering*((float)MAX(ABS(distanceErr), 50)) * ROT_P), -850, 0) * -0.2f);
         cmdR = cmdR * 0.8f + (CLAMP(distanceErr - (steering*((float)MAX(ABS(distanceErr), 50)) * ROT_P), -850, 0) * -0.2f);
-        if (distanceErr > -500) {
+        if (distanceErr > -5000) {
           enable = 1;
         }
-        if (distanceErr > -300) {
+        if (distanceErr > -3000000) {
           #ifdef INVERT_R_DIRECTION
             pwmr = cmdR;
           #else
