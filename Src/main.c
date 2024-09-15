@@ -372,7 +372,7 @@ int main(void) {
       if (nunchuk_connected == 0) {
         cmdL = cmdL * 0.8f + (CLAMP(distanceErr + (steering*((float)MAX(ABS(distanceErr), 50)) * ROT_P), -850, 0) * -0.2f);
         cmdR = cmdR * 0.8f + (CLAMP(distanceErr - (steering*((float)MAX(ABS(distanceErr), 50)) * ROT_P), -850, 0) * -0.2f);
-        if (distanceErr > 0) {
+        if (distanceErr > -500) {
           enable = 1;
         }
         if (distanceErr > -300) {
@@ -414,7 +414,7 @@ int main(void) {
         nunchuk_connected = 0;
       }
 
-      if ((distance / 1345.0) - setDistance > 100 && (lastDistance / 1345.0) - setDistance > 100) { // Error, robot too far away!
+      if ((distance / 1345.0) - setDistance > 0.5 && (lastDistance / 1345.0) - setDistance > 0.5) { // Error, robot too far away!
         enable = 0;
         beepLong(5);
         #ifdef SUPPORT_LCD
