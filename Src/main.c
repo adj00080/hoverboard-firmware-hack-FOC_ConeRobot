@@ -414,7 +414,7 @@ int main(void) {
         nunchuk_connected = 0;
       }
 
-      if ((distance / 1345.0) - setDistance > 2 && (lastDistance / 1345.0) - setDistance > 2) { // Error, robot too far away!
+      if ((distance / 1345.0) - setDistance > 100 && (lastDistance / 1345.0) - setDistance > 100) { // Error, robot too far away!
         enable = 0;
         beepLong(5);
         #ifdef SUPPORT_LCD
